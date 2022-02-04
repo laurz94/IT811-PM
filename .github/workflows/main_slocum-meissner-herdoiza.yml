@@ -2,6 +2,8 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
 name: Build and deploy Node.js app to Azure Web App - Slocum-Meissner-Herdoiza
+env: 
+  NODE_VERSION: '16.x'
 
 on:
   push:
@@ -16,21 +18,30 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set up Node.js version
+      - name: Use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v1
         with:
-          node-version: '16.x'
+          node-version: ${{ env.NODE_VERSION }}
 
-      - name: npm install, build, and test
+      - name: npm install and build
         run: |
+          npm install -g @angular/cli
           npm install
           npm run build --prod
 
+      - name: Zip ku-bookstore
+        with:
+          rootFolderOrFile: './dist/ku-bookstore'
+          includeRootFolder: false
+          archiveType: zip
+          archiveFile: './ku-bookstore.zip'
+          replaceExistingArchive: true
+      
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
-          name: node-app
-          path: .
+            name: ku-bookstore
+            path: ./ku-bookstore.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -43,7 +54,17 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v2
         with:
-          name: node-app
+          name: ku-bookstore
+          
+      # Extract files
+      # Extract a variety of archive and compression files such as .7z, .rar, .tar.gz, and .zip
+      - name: ExtractFiles@1
+        with:
+          archiveFilePatterns: '**/*.zip' 
+          destinationFolder: ./ku-bookstore
+          cleanDestinationFolder: true 
+          #overwriteExistingFiles: false
+          #pathToSevenZipTool:
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
@@ -51,4 +72,4 @@ jobs:
         with:
           app-name: 'Slocum-Meissner-Herdoiza'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3D69701141A84047816CECECCF39D80D }}
-          package: ./dist/IT811-PM/ku-bookstore
+          package: ./ku-bookstore
