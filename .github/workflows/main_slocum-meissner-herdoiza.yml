@@ -1,75 +1,88 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
+# # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - Slocum-Meissner-Herdoiza
-env: 
-  NODE_VERSION: '16.x'
+# name: Build and deploy Node.js app to Azure Web App - Slocum-Meissner-Herdoiza
+# on:
+#   push:
+#     branches:
+#       - main
+#   workflow_dispatch:
 
-on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#       - uses: actions/checkout@v2
+
+#       - name: Use Node.js '16.x'
+#         uses: actions/setup-node@v1
+#         with:
+#           node-version: '16.x'
+
+#       - name: npm install and build
+#         run: |
+#           npm install
+#           npm run build --prod
+      
+#       # - name: Upload artifact for deployment job
+#       #   uses: actions/upload-artifact@v2
+#       #   with:
+#       #       name: ku-bookstore
+#       #       path: ./dist/ku-bookstore
+
+#   deploy:
+#     runs-on: ubuntu-latest
+#     needs: build
+#     environment:
+#       name: 'Production'
+#       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+#     steps:
+#     #   - name: Download artifact from build job
+#     #     uses: actions/download-artifact@v2
+#     #     with:
+#     #       name: ku-bookstore
+
+#       - name: 'Deploy to Azure Web App'
+#         id: deploy-to-webapp
+#         uses: azure/webapps-deploy@v2
+#         with:
+#           app-name: 'Slocum-Meissner-Herdoiza'
+#           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3D69701141A84047816CECECCF39D80D }}
+#           package: ./dist/ku-bookstore
+
+
+# File: .github/workflows/workflow.yml
+name: JavaScript CI
+
+on: [push]
+
+env:
+  AZURE_WEBAPP_NAME: 'Slocum-Meissner-Herdoiza'
+  AZURE_WEBAPP_PACKAGE_PATH: ./dist/ku-bookstore      # set this to the path to your web app project, defaults to the repository root
+  NODE_VERSION: '16.x'                # set this to the node version to use
 
 jobs:
-  build:
+  build-and-deploy:
+    name: Build and Deploy
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Use Node.js ${{ env.NODE_VERSION }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-
-      - name: npm install and build
-        run: |
-          npm install -g @angular/cli
-          npm install
-          npm run build --prod
-
-      - name: Zip ku-bookstore
-        with:
-          rootFolderOrFile: './dist/ku-bookstore'
-          includeRootFolder: false
-          archiveType: zip
-          archiveFile: './ku-bookstore.zip'
-          replaceExistingArchive: true
-      
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v2
-        with:
-            name: ku-bookstore
-            path: ./ku-bookstore.zip
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    environment:
-      name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-
-    steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v2
-        with:
-          name: ku-bookstore
-          
-      # Extract files
-      # Extract a variety of archive and compression files such as .7z, .rar, .tar.gz, and .zip
-      - name: ExtractFiles@1
-        with:
-          archiveFilePatterns: '**/*.zip' 
-          destinationFolder: ./ku-bookstore
-          cleanDestinationFolder: true 
-          #overwriteExistingFiles: false
-          #pathToSevenZipTool:
-
-      - name: 'Deploy to Azure Web App'
-        id: deploy-to-webapp
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: 'Slocum-Meissner-Herdoiza'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3D69701141A84047816CECECCF39D80D }}
-          package: ./ku-bookstore
+    - uses: actions/checkout@main
+    - name: Use Node.js ${{ env.NODE_VERSION }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ env.NODE_VERSION }}
+    - name: npm install, build, and test
+      run: |
+        # Build and test the project, then
+        # deploy to Azure Web App.
+        npm install
+        npm run build --prod
+      # working-directory: my-app-path
+    - name: 'Deploy to Azure WebApp'
+      uses: azure/webapps-deploy@v2
+      with: 
+        app-name: ${{ env.AZURE_WEBAPP_NAME }}
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3D69701141A84047816CECECCF39D80D }}
+        package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
