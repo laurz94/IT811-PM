@@ -15,15 +15,11 @@ export class AppComponent implements OnInit {
       items: [
         {
           label: 'Team Profiles',
-          command: () => {
-            window.open('/assets/project-documents/IT811-TeamProfiles.docx', '_blank');
-          }
+          routerLink: '/profiles'
         },
         {
           label: 'Project Definition',
-          command: () => {
-            window.open('/assets/project-documents/IT811-Project Definition.docx', '_blank');
-          }
+          routerLink: '/project-def'
         },
       ],
     },
