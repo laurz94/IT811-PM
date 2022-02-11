@@ -23,13 +23,7 @@ export class CommunicationPlanComponent {
       ],
       medium: 'Teams meeting',
       frequency: 'Once a project start.',
-      audience: [
-        'Project team',
-        'Project sponsor',
-        // 'Director of Project Management',
-        // 'Director of Engineering',
-        'Customer',
-      ],
+      audience: ['Project team', 'Project sponsor', 'Customers'],
     },
     {
       type: 'Backlog Grooming',
@@ -54,7 +48,9 @@ export class CommunicationPlanComponent {
     },
     {
       type: 'Sprint Retrospective',
-      purpose: ['Review the effectiveness of the current development processes.'],
+      purpose: [
+        'Review the effectiveness of the current development processes.',
+      ],
       medium: 'Teams meeting',
       frequency: 'Every other Tuesday at 1 PM.',
       audience: ['Project team'],
@@ -70,26 +66,24 @@ export class CommunicationPlanComponent {
     },
     {
       type: 'Sprint Review',
-      purpose: ['Update all stakeholders on the status of the project and receive feedback.',],
+      purpose: [
+        'Update all stakeholders on the status of the project and receive feedback.',
+      ],
       medium: 'Teams meeting',
       frequency: 'Monthly.',
-      audience: ['Project manager', 'Project sponsor', 'Stakeholders'],
+      audience: [
+        'Project team',
+        'Project manager',
+        'Project sponsor',
+        'Customers',
+      ],
     },
     {
       type: 'Project Closing Meeting',
-      purpose: [
-        'Review the end product.',
-        'Discuss the lessons learned.',
-      ],
+      purpose: ['Review the end product.', 'Discuss the lessons learned.'],
       medium: 'Teams meeting',
       frequency: 'Once a project end.',
-      audience: [
-        'Project team',
-        'Project sponsor',
-        // 'Director of Project Management',
-        // 'Director of Engineering',
-        'Customer',
-      ],
+      audience: ['Project team', 'Project sponsor', 'Customers'],
     },
   ];
 }

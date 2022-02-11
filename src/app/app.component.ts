@@ -15,19 +15,19 @@ export class AppComponent implements OnInit {
       items: [
         {
           label: 'Communication Plan',
-          routerLink: '/communication-plan'
-        },
-        {
-          label: 'Team Profiles',
-          routerLink: '/profiles'
+          routerLink: '/communication-plan',
         },
         {
           label: 'Project Definition',
-          routerLink: '/project-def'
+          routerLink: '/project-def',
         },
         {
           label: 'Stakeholders',
-          routerLink: '/stakeholders'
+          routerLink: '/stakeholders',
+        },
+        {
+          label: 'Team Profiles',
+          routerLink: '/profiles',
         },
       ],
     },
@@ -115,5 +115,5 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.primengConfig.ripple = true;
-}
+  }
 }
