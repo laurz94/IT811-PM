@@ -14,12 +14,20 @@ export class AppComponent implements OnInit {
       icon: 'pi pi-fw pi-file',
       items: [
         {
+          label: 'Communication Plan',
+          routerLink: '/communication-plan'
+        },
+        {
           label: 'Team Profiles',
           routerLink: '/profiles'
         },
         {
           label: 'Project Definition',
           routerLink: '/project-def'
+        },
+        {
+          label: 'Stakeholders',
+          routerLink: '/stakeholders'
         },
       ],
     },

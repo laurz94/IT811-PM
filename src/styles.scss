@@ -1,8 +1,28 @@
+@use "./app/_constants" as constants;
+
 html,
 body {
   height: 100%;
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 40px;
+  color: constants.$warning-color;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 30px;
+  color: constants.$title-bar-color;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 20px;
+  color: constants.$error-color;
 }

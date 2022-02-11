@@ -1,0 +1,30 @@
+<h1>Communication Plan</h1>
+<div>
+  <p-table
+    [columns]="communicationPlanColumns"
+    [value]="communicationPlans"
+    responsiveLayout="scroll"
+  >
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th *ngFor="let col of columns" [pSortableColumn]="col.title">
+          {{ col.title }}
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr>
+        <td *ngFor="let col of columns">
+          <ng-container *ngIf="col.type === 'array'; else default">
+            <ul>
+              <li *ngFor="let p of rowData[col.field]">{{ p }}</li>
+            </ul>
+          </ng-container>
+          <ng-template #default>
+            {{ rowData[col.field] }}
+          </ng-template>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
