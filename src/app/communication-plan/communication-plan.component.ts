@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-communication-plan',
-  templateUrl: './communication-plan.component.html',
-  styleUrls: ['./communication-plan.component.scss'],
+  templateUrl: './communication-plan.component.html'
 })
 export class CommunicationPlanComponent {
   communicationPlanColumns = [

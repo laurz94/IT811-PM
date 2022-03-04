@@ -1,23 +1,22 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-stakeholders',
-  templateUrl: './stakeholders.component.html',
-  styleUrls: ['./stakeholders.component.scss'],
+  selector: 'app-project-charter',
+  templateUrl: './project-charter.component.html'
 })
-export class StakeholdersComponent {
+export class ProjectCharterComponent {
   stakeholderColumns = [
-    { title: 'Name', field: 'name' },
-    { title: 'Contact Information', field: 'contactInformation' },
-    { title: 'Project Role', field: 'projectRole' },
-    { title: 'Influence', field: 'influence' },
+    { title: 'Stakeholder', field: 'name' },
+    { title: 'Contact', field: 'contactInformation' },
+    { title: 'Role', field: 'projectRole' },
+    { title: 'Responsibility', field: 'influence' },
   ];
 
   stakeholders = [
     {
       name: 'Dr. Saiedian',
       contactInformation: 'saiedian@ku.edu',
-      projectRole: 'Project sponsor',
+      projectRole: 'Project Sponsor',
       influence: 'Go/No Go',
     },
     {
@@ -51,6 +50,5 @@ export class StakeholdersComponent {
       influence: 'Social media exposure',
     },
   ];
-
 
 }

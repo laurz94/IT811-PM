@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { TableModule } from 'primeng/table';
 
-import { CommunicationPlanComponent } from './communication-plan.component';
+import { ProjectCharterComponent } from './project-charter.component';
 
-const routes: Routes = [{ path: '', component: CommunicationPlanComponent }];
+const routes: Routes = [{ path: '', component: ProjectCharterComponent }];
 
 @NgModule({
-  declarations: [CommunicationPlanComponent],
+  declarations: [ProjectCharterComponent],
   imports: [RouterModule.forChild(routes), CommonModule, TableModule],
 })
-export class CommunicationPlanModule {}
+export class ProjectCharterModule {}

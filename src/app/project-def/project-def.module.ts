@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { Routes, RouterModule } from '@angular/router';
 import { TableModule } from 'primeng/table';
 
-import { ProjectDefRoutingModule } from './project-def-routing.module';
 import { ProjectDefComponent } from './project-def.component';
+
+const routes: Routes = [{ path: '', component: ProjectDefComponent }];
 
 @NgModule({
   declarations: [ProjectDefComponent],
-  imports: [CommonModule, ProjectDefRoutingModule, TableModule],
+  imports: [RouterModule.forChild(routes), CommonModule, TableModule],
 })
 export class ProjectDefModule {}

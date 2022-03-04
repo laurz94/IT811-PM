@@ -18,6 +18,10 @@ export class AppComponent implements OnInit {
           routerLink: '/communication-plan',
         },
         {
+          label: 'Project Charter',
+          routerLink: '/project-charter',
+        },
+        {
           label: 'Project Definition',
           routerLink: '/project-def',
         },

@@ -1,0 +1,100 @@
+<h1>Project Charter</h1>
+<hr />
+<div>
+  <p><b>Project Name: </b> KU Bookstore 2.0</p>
+  <p><b>Project Manager: </b> Christopher Herdoiza</p>
+  <p><b>Customer: </b> University of Kansas</p>
+  <p><b>Project Sponsor: </b> Hossein Saiedian</p>
+  <p><b>Project Start/End (projected): </b> January 18, 2022 - May 13, 2022</p>
+  <p><b>Prepared: </b> March 3, 2022</p>
+</div>
+<div>
+  <h3>Project Overview</h3>
+  <hr />
+  <p>
+    <b>Project aim:</b> The goal of this project is to not only improve on the
+    current KU Bookstore functionality but create additional relevant content.
+    Functionally relevancy and student aid are key to this goal, rather than
+    pure profit center model. It is supposed to unite students around the KU
+    Bookstore as a foundation, rather than a burden. Streamlined Payment Process
+    Merchandise upgrade & Features Student Services.
+  </p>
+</div>
+<div>
+  <h3>Objectives</h3>
+  <hr />
+  <ul>
+    <li>Create an easy payment process</li>
+    <li>Allow for multiple payment methods</li>
+    <li>Create simulated merchandise previews</li>
+    <li>Sell tickets university games and events</li>
+    <li>Automatically match the price of competing sites</li>
+    <li>Allow searching for products based on your major</li>
+    <li>
+      Create a discount hub to easily find items that are offered at a
+      discounted rate
+    </li>
+    <li>
+      Create a community hub to allow students to a place to connect and
+      interact with each other
+    </li>
+    <li>
+      Allow for in-text book search so students can find books related to
+      specific topic
+    </li>
+    <li>Allow for scheduling outdoor pick-up/drop-off of materials</li>
+    <li>Allow the ability to create an account online</li>
+    <li>
+      Allow the ability for students to share feedback about the bookstore
+    </li>
+  </ul>
+</div>
+<div>
+  <h3>Key Assumptions</h3>
+  <hr />
+  <ul>
+    <li>Interface will be a web browser</li>
+    <li>Seamless integration with the KU athletics API</li>
+    <li>
+      Social media department will run a media blitz to advertise the new
+      website
+    </li>
+    <li>Social media department will post campus events on the website</li>
+    <li>
+      IT department will provide integration into student database or account
+      creation
+    </li>
+    <li>
+      APIs available for price matching on Amazon and other competitor websites
+    </li>
+    <li>
+      Textbook publishers will provide APIs for searching the contents of the
+      textbooks
+    </li>
+    <li>IT department will establish a mailbox for bookstore feedback</li>
+  </ul>
+</div>
+<div>
+  <h3>Stakeholder and Responsibilities</h3>
+  <hr />
+  <p-table
+    [columns]="stakeholderColumns"
+    [value]="stakeholders"
+    responsiveLayout="scroll"
+  >
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th *ngFor="let col of columns" [pSortableColumn]="col.title">
+          {{ col.title }}
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr>
+        <td *ngFor="let col of columns">
+          {{ rowData[col.field] }}
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
