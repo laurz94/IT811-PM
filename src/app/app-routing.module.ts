@@ -35,6 +35,7 @@ const routes: Routes = [
         (m) => m.ProjectCharterModule
       ),
   },
+  { path: 'competitive-analysis', loadChildren: () => import('./competitive-analysis/competitive-analysis.module').then(m => m.CompetitiveAnalysisModule) },
 ];
 
 @NgModule({

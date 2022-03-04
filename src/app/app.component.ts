@@ -17,6 +17,7 @@ export class AppComponent implements OnInit {
           label: 'Communication Plan',
           routerLink: '/communication-plan',
         },
+        { label: 'Competitive Analysis', routerLink: 'competitive-analysis' },
         {
           label: 'Project Charter',
           routerLink: '/project-charter',

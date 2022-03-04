@@ -1,0 +1,61 @@
+<h1>Competitive Analysis</h1>
+<div>
+  <h2>Sites Reviewed</h2>
+  <hr />
+  <ul>
+    <li>K-State Bookstore</li>
+    <li>UMKC Bookstore</li>
+    <li>Kansas City Chiefs</li>
+  </ul>
+</div>
+<div>
+  <h3>Appealing Features</h3>
+  <hr />
+  <h4>Non-Functional</h4>
+  <ul>
+    <li>Ease of use</li>
+    <li>Latency and Performance</li>
+  </ul>
+  <h4>Functional</h4>
+  <ul>
+    <li>Process Multiple Payment Methods</li>
+    <li>Simulated Merchandise Previews</li>
+    <li>Ticket Sales</li>
+    <li>Automatic Price Matching</li>
+    <li>Community Hub</li>
+    <li>Discount Hub</li>
+    <li>In-text Book Search</li>
+    <li>Outdoor Pick-up/Drop-Off</li>
+    <li>Online Course Signup</li>
+    <li>Feedback Functionality</li>
+  </ul>
+</div>
+<div>
+  <h3>Weighted Analysis</h3>
+  <hr />
+  <p-table [columns]="columns" [value]="features" responsiveLayout="scroll">
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th *ngFor="let col of columns" [pSortableColumn]="col.title">
+          {{ col.title }}
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr>
+        <td *ngFor="let col of columns">
+          {{ rowData[col.field] }}
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="footer" let-columns="columns">
+      <tr>
+        <td>{{ totals.criteria }}</td>
+        <td>{{ totals.wt }}</td>
+        <td>{{ totals.kState }}</td>
+        <td>{{ totals.umkc }}</td>
+        <td>{{ totals.chiefs }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
