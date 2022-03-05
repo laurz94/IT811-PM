@@ -27,6 +27,10 @@ export class AppComponent implements OnInit {
           routerLink: '/project-def',
         },
         {
+          label: 'Requirements',
+          routerLink: '/requirements',
+        },
+        {
           label: 'Stakeholders',
           routerLink: '/stakeholders',
         },

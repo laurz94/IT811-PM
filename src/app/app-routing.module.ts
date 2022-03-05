@@ -36,6 +36,7 @@ const routes: Routes = [
       ),
   },
   { path: 'competitive-analysis', loadChildren: () => import('./competitive-analysis/competitive-analysis.module').then(m => m.CompetitiveAnalysisModule) },
+  { path: 'requirements', loadChildren: () => import('./requirements/requirements.module').then(m => m.RequirementsModule) },
 ];
 
 @NgModule({
