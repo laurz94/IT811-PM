@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuItem, PrimeNGConfig } from 'primeng/api';
 
 @Component({
@@ -120,7 +121,7 @@ export class AppComponent implements OnInit {
     },
   ];
 
-  constructor(private primengConfig: PrimeNGConfig) {}
+  constructor(private primengConfig: PrimeNGConfig, public router: Router) {}
 
   ngOnInit() {
     this.primengConfig.ripple = true;
