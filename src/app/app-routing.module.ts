@@ -3,11 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'profiles',
-    loadChildren: () =>
-      import('./profiles/profiles.module').then((m) => m.ProfilesModule),
-  },
-  {
     path: 'project-def',
     loadChildren: () =>
       import('./project-def/project-def.module').then(
@@ -22,21 +17,12 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'communication-plan',
-    loadChildren: () =>
-      import('./communication-plan/communication-plan.module').then(
-        (m) => m.CommunicationPlanModule
-      ),
-  },
-  {
     path: 'project-charter',
     loadChildren: () =>
       import('./project-charter/project-charter.module').then(
         (m) => m.ProjectCharterModule
       ),
   },
-  { path: 'competitive-analysis', loadChildren: () => import('./competitive-analysis/competitive-analysis.module').then(m => m.CompetitiveAnalysisModule) },
-  { path: 'requirements', loadChildren: () => import('./requirements/requirements.module').then(m => m.RequirementsModule) },
 ];
 
 @NgModule({

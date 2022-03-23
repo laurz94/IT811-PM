@@ -2,7 +2,14 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-project-charter',
-  templateUrl: './project-charter.component.html'
+  templateUrl: './project-charter.component.html',
+  styles: [
+    `
+      div {
+        margin: 50px;
+      }
+    `,
+  ],
 })
 export class ProjectCharterComponent {
   stakeholderColumns = [
@@ -26,29 +33,28 @@ export class ProjectCharterComponent {
       influence: 'Technology Stack',
     },
     {
-      name:  `Jen O'Conner - Director of KU Bookstore`,
+      name: `Jen O'Conner - Director of KU Bookstore`,
       contactInformation: 'jen.oconnor@ku.edu',
       projectRole: 'Customer - Bookstore',
       influence: 'Bookstore features',
     },
     {
-      name:  `Travis Goff- Director of Athletics`,
+      name: `Travis Goff- Director of Athletics`,
       contactInformation: 'kuathletics@ku.edu',
       projectRole: 'Customer - Ticket Sales',
       influence: 'Ticket sales features',
     },
     {
-      name:  `Jason Coleman - Technology Manager`,
+      name: `Jason Coleman - Technology Manager`,
       contactInformation: 'jasonac@ku.edu',
       projectRole: 'Customer - Information Technology',
       influence: 'Security management',
     },
     {
-      name:  `Bita Porubsky - Social Content Manager`,
+      name: `Bita Porubsky - Social Content Manager`,
       contactInformation: 'bita@ku.edu',
       projectRole: 'Customer - Social Media',
       influence: 'Social media exposure',
     },
   ];
-
 }

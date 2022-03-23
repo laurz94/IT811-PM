@@ -3,6 +3,13 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-competitive-analysis',
   templateUrl: './competitive-analysis.component.html',
+  styles: [
+    `
+      div {
+        margin: 50px;
+      }
+    `,
+  ],
 })
 export class CompetitiveAnalysisComponent implements OnInit {
   columns = [

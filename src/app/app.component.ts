@@ -15,29 +15,16 @@ export class AppComponent implements OnInit {
       icon: 'pi pi-fw pi-file',
       items: [
         {
-          label: 'Communication Plan',
-          routerLink: '/communication-plan',
-        },
-        { label: 'Competitive Analysis', routerLink: 'competitive-analysis' },
-        {
-          label: 'Project Charter',
-          routerLink: '/project-charter',
-        },
-        {
-          label: 'Project Definition',
+          label: 'Part 1: Vision Statement and Team Portfolio',
           routerLink: '/project-def',
         },
         {
-          label: 'Requirements',
-          routerLink: '/requirements',
-        },
-        {
-          label: 'Stakeholders',
+          label: 'Part 2: Stakeholder Registry & Communication Plan',
           routerLink: '/stakeholders',
         },
         {
-          label: 'Team Profiles',
-          routerLink: '/profiles',
+          label: 'Part 3: Project Charter & Requirements',
+          routerLink: '/project-charter',
         },
       ],
     },

@@ -1,6 +1,12 @@
-<h1>Project Charter</h1>
-<hr />
 <div>
+  <h1>Requirements</h1>
+  <hr />
+  <a href="../../assets/project-documents/IT_811_KU_Bookstore_Requirements.pdf">Project Requirements Document</a>
+</div>
+
+<div>
+  <h1>Project Charter</h1>
+  <hr />
   <p><b>Project Name: </b> KU Bookstore 2.0</p>
   <p><b>Project Manager: </b> Christopher Herdoiza</p>
   <p><b>Customer: </b> University of Kansas</p>
@@ -77,11 +83,7 @@
 <div>
   <h3>Stakeholder and Responsibilities</h3>
   <hr />
-  <p-table
-    [columns]="stakeholderColumns"
-    [value]="stakeholders"
-    responsiveLayout="scroll"
-  >
+  <p-table [columns]="stakeholderColumns" [value]="stakeholders" responsiveLayout="scroll">
     <ng-template pTemplate="header" let-columns>
       <tr>
         <th *ngFor="let col of columns" [pSortableColumn]="col.title">
@@ -98,3 +100,5 @@
     </ng-template>
   </p-table>
 </div>
+
+<app-competitive-analysis></app-competitive-analysis>
