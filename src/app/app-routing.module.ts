@@ -23,6 +23,7 @@ const routes: Routes = [
         (m) => m.ProjectCharterModule
       ),
   },
+  { path: 'wbs', loadChildren: () => import('./work-break-down-structure/work-break-down-structure.module').then(m => m.WorkBreakDownStructureModule) },
 ];
 
 @NgModule({
