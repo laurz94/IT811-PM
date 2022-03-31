@@ -30,6 +30,9 @@ export class AppComponent implements OnInit {
         {
           label: 'Part 4: Work Break Down Structure',
           routerLink: '/wbs',
+        },{
+          label: 'Part 5: Resources',
+          routerLink: '/resources',
         },
       ],
     },
