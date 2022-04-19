@@ -25,6 +25,7 @@ const routes: Routes = [
   },
   { path: 'wbs', loadChildren: () => import('./work-break-down-structure/work-break-down-structure.module').then(m => m.WorkBreakDownStructureModule) },
   { path: 'resources', loadChildren: () => import('./resources/resources.module').then(m => m.ResourcesModule) },
+  { path: 'quality', loadChildren: () => import('./quality/quality.module').then(m => m.QualityModule) },
 ];
 
 @NgModule({

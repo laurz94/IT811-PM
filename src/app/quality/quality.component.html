@@ -1,0 +1,61 @@
+<div>
+    <h1>Quality</h1>
+    <hr />
+
+    <a href="../../assets/project-documents/ku-bookstore-quality-management-plan.pdf">Quality Management Plan</a>
+    <div>
+        <h3>Project Costs</h3>
+        <div>
+            <p-table [columns]="costsColumns" [value]="costs" responsiveLayout="scroll">
+                <ng-template pTemplate="header" let-columns>
+                    <tr>
+                        <th *ngFor="let col of columns" [pSortableColumn]="col.title">
+                            {{ col.header }}
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowData let-columns="columns">
+                    <tr>
+                        <td *ngFor="let col of columns">
+                            {{ rowData[col.field] }}
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="footer">
+                    <tr>
+                        <td colspan="4">Total</td>
+                        <td>$24,874</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+        <br/>
+        <div>
+            <p-table [columns]="hardwareColumns" [value]="hardware" responsiveLayout="scroll">
+                <ng-template pTemplate="header" let-columns>
+                    <tr>
+                        <th *ngFor="let col of columns" [pSortableColumn]="col.title">
+                            {{ col.header }}
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowData let-columns="columns">
+                    <tr>
+                        <td *ngFor="let col of columns">
+                            {{ rowData[col.field] }}
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="footer">
+                    <tr>
+                        <td colspan="2">Total</td>
+                        <td>$13,800</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+        <div>
+            <h4><b>Total Project Costs: $38,674</b></h4>
+        </div>
+    </div>
+</div>

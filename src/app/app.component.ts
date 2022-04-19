@@ -26,13 +26,18 @@ export class AppComponent implements OnInit {
           label: 'Part 3: Project Charter & Requirements',
           routerLink: '/project-charter',
         },
-        
+
         {
           label: 'Part 4: Work Break Down Structure',
           routerLink: '/wbs',
-        },{
+        },
+        {
           label: 'Part 5: Resources',
           routerLink: '/resources',
+        },
+        {
+          label: 'Part 6: Quality',
+          routerLink: '/quality',
         },
       ],
     },
