@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-quality',
-  templateUrl: './quality.component.html',
-  styleUrls: ['./quality.component.scss'],
+  templateUrl: './quality.component.html'
 })
 export class QualityComponent {
   costsColumns = [

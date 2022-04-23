@@ -1,0 +1,46 @@
+<div>
+    <h1>Procurement Plan</h1>
+    <hr />
+    <div>
+        <h2>Procurement Management Plan</h2>
+        <div>
+            <a href="../../assets/project-documents/Procurement Management Plan_KU_Bookstore.pdf">Procurement Management
+                Plan</a>
+        </div>
+        <h2>Shopping Cart RFP</h2>
+        <div>
+            <a href="../../assets/project-documents/RFP_KU_Bookstore.pdf">Shopping Cart RFP</a>
+        </div>
+        <h2>Shopping Cart Make or Buy Analysis</h2>
+        <div>
+            <p-table [columns]="makeOrBuyColumns" [value]="makeOrBuyData" responsiveLayout="scroll">
+                <ng-template pTemplate="header" let-columns>
+                    <tr>
+                        <th *ngFor="let col of columns" [pSortableColumn]="col.title">
+                            {{ col.header }}
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowData let-columns="columns">
+                    <tr>
+                        <td *ngFor="let col of columns">
+                            {{ rowData[col.field] }}
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="footer">
+                    <tr>
+                        <td>Total Initial Project Costs</td>
+                        <td>$91,000</td>
+                        <td>$2,000</td>
+                    </tr>
+                    <tr>
+                        <td>Total Recurring Annual Costs</td>
+                        <td>$13,000</td>
+                        <td>~$33,860</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>
