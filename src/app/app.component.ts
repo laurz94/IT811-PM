@@ -39,6 +39,10 @@ export class AppComponent implements OnInit {
           label: 'Part 6: Quality',
           routerLink: '/quality',
         },
+        {
+          label: 'Part 7: Risks',
+          routerLink: '/risks',
+        },
       ],
     },
     {
