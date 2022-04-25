@@ -1,0 +1,54 @@
+<div>
+    <h1>Project Execution</h1>
+    <hr />
+    <div>
+        <h2>Steps for Project Execution</h2>
+        <div>
+
+        </div>
+        <h2>Updated Gantt Chart</h2>
+        <hr />
+        <div>
+            <img src="../../assets/project-documents/Part9-Gnatt.png" />
+        </div>
+        <h2>Change Requests</h2>
+        <div>
+            <ul><li>Update shopping cart software: This request was marked out of scope for this project.</li></ul>
+        </div>
+        <h2>Progress Report</h2>
+        <hr />
+        <div>
+            <p-table [columns]="progressColumns" [value]="progressData" responsiveLayout="scroll">
+                <ng-template pTemplate="header" let-columns>
+                    <tr>
+                        <th *ngFor="let col of columns" [pSortableColumn]="col.title">
+                            {{ col.header }}
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowData let-columns="columns">
+                    <tr>
+                        <td *ngFor="let col of columns">
+                            <ng-container *ngIf="col.field === 'complete'; else rawData">
+                                <p-progressBar [value]="rowData[col.field]" [showValue]="true"></p-progressBar>
+                            </ng-container>
+                            <ng-template #rawData>
+                                {{ rowData[col.field] }}
+                            </ng-template>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="footer">
+                    <tr>
+                        <td>Overall Project Completion</td>
+                        <td colspan="2"><p-progressBar class="p-button-danger" value="47" [showValue]="true"></p-progressBar></td>
+                    </tr>
+                    <tr>
+                        <td>Time Elapsed</td>
+                        <td colspan="2"><p-progressBar value="58" [showValue]="true"></p-progressBar></td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>

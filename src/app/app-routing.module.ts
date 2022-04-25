@@ -28,6 +28,7 @@ const routes: Routes = [
   { path: 'quality', loadChildren: () => import('./quality/quality.module').then(m => m.QualityModule) },
   { path: 'risks', loadChildren: () => import('./risks/risks.module').then(m => m.RisksModule) },
   { path: 'procurement', loadChildren: () => import('./procurement/procurement.module').then(m => m.ProcurementModule) },
+  { path: 'execution', loadChildren: () => import('./execution/execution.module').then(m => m.ExecutionModule) },
 ];
 
 @NgModule({
