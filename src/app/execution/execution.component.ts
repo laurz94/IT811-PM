@@ -3,6 +3,18 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-execution',
   templateUrl: './execution.component.html',
+  styles: [
+    `
+      .card-body {
+        display: flex;
+        flex-direction: row;
+        gap: 30%;
+      }
+      .column {
+        flex-direction: column;
+      }
+    `,
+  ],
 })
 export class ExecutionComponent {
   progressColumns = [
@@ -15,56 +27,56 @@ export class ExecutionComponent {
     {
       task: 'Assign Project Manager',
       complete: 100,
-      date: 'January 18, 2022',
+      date: 'February 18, 2022',
     },
-    { task: 'Assign Project Team', complete: 100, date: 'January 18, 2022' },
+    { task: 'Assign Project Team', complete: 100, date: 'February 18, 2022' },
     {
       task: 'Define Project Scope',
       complete: 100,
-      date: 'January 26, 2022',
+      date: 'March 7, 2022',
     },
     {
       task: 'Requirements Definition',
       complete: 100,
-      date: 'February 24, 2022',
+      date: 'March 22, 2022',
     },
-    { task: 'Architecture Design', complete: 100, date: 'March 11, 2022' },
-    { task: 'Risk Analysis', complete: 100, date: 'March 11, 2022' },
-    { task: 'Scheduling', complete: 100, date: 'March 21, 2022' },
-    { task: 'Define Project Plan', complete: 100, date: 'April 5, 2022' },
-    { task: 'Develop SQL DB', complete: 100, date: 'April 20, 2022' },
+    { task: 'Architecture Design', complete: 100, date: 'April 6, 2022' },
+    { task: 'Risk Analysis', complete: 100, date: 'April 6, 2022' },
+    { task: 'Scheduling', complete: 100, date: 'April 14, 2022' },
+    { task: 'Define Project Plan', complete: 100, date: 'April 29, 2022' },
+    { task: 'Develop SQL DB', complete: 0, date: 'May 16, 2022' },
     {
       task: 'Integrate with KU ADID',
-      complete: 100,
-      date: 'April 13, 2022',
+      complete: 0,
+      date: 'May 9, 2022',
     },
-    { task: 'Integrate with TRIBE', complete: 75, date: 'April 28, 2022' },
-    { task: 'Integrate with STRIPE', complete: 75, date: 'April 28, 2022' },
-    { task: 'GUI Development', complete: 50, date: 'May 4, 2022' },
-    { task: 'Chatbot Integration', complete: 50, date: 'May 4, 2022' },
-    { task: 'Email Mailbox Creation', complete: 100, date: 'May 4, 2022' },
-    { task: 'Develop Search Engine', complete: 35, date: 'May 18, 2022' },
+    { task: 'Integrate with TRIBE', complete: 0, date: 'May 24, 2022' },
+    { task: 'Integrate with STRIPE', complete: 0, date: 'May 24, 2022' },
+    { task: 'GUI Development', complete: 0, date: 'May 30, 2022' },
+    { task: 'Chatbot Integration', complete: 0, date: 'May 30, 2022' },
+    { task: 'Email Mailbox Creation', complete: 0, date: 'May 30, 2022' },
+    { task: 'Develop Search Engine', complete: 0, date: 'June 13, 2022' },
     {
       task: 'Develop Automatic Price Matching',
       complete: 0,
-      date: 'June 2, 2022',
+      date: 'June 28, 2022',
     },
-    { task: 'Write Documentation', complete: 100, date: 'March 11, 2022' },
-    { task: 'Unit Testing', complete: 0, date: 'June 2, 2022' },
-    { task: 'Regression Testing', complete: 0, date: 'June 9, 2022' },
-    { task: 'UAT Testing', complete: 0, date: 'June 17, 2022' },
-    { task: 'Documentation Review', complete: 0, date: 'June 17, 2022' },
-    { task: 'Release Notes', complete: 0, date: 'June 10, 2022' },
-    { task: 'Packaging & Deployment', complete: 0, date: 'June 27, 2022' },
+    { task: 'Write Documentation', complete: 50, date: 'April 6, 2022' },
+    { task: 'Unit Testing', complete: 0, date: 'June 28, 2022' },
+    { task: 'Regression Testing', complete: 0, date: 'July 5, 2022' },
+    { task: 'UAT Testing', complete: 0, date: 'June 13, 2022' },
+    { task: 'Documentation Review', complete: 0, date: 'June 13, 2022' },
+    { task: 'Release Notes', complete: 0, date: 'July 6, 2022' },
+    { task: 'Packaging & Deployment', complete: 0, date: 'July 21, 2022' },
     {
       task: 'Documentation Acceptance',
       complete: 0,
-      date: 'June 30, 2022',
+      date: 'July 26, 2022',
     },
     {
       task: 'Product Support Agreement',
       complete: 0,
-      date: 'July 5, 2022',
+      date: 'July 29, 2022',
     },
   ];
 }

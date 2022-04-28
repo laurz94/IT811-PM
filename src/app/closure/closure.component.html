@@ -1,0 +1,34 @@
+<div>
+    <h1>Project Closure</h1>
+    <hr />
+    <div>
+        <h2>Project Closure</h2>
+        <div>
+            <a href="../../assets/project-documents/KU BookStore-Project-Closure.pdf">Project Closure Document</a>
+        </div>
+        <h2>Updated Gantt Chart</h2>
+        <hr />
+        <div>
+            <img src="../../assets/project-documents/Part10-Gantt.png" />
+        </div>
+        <h2>Earned Value Analysis</h2>
+        <div>
+            <p-table [columns]="columns" [value]="data" responsiveLayout="scroll" styleClass="p-datatable-sm">
+                <ng-template pTemplate="header" let-columns>
+                    <tr>
+                        <th *ngFor="let col of columns" [pSortableColumn]="col.title">
+                            {{ col.header }}
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowData let-columns="columns">
+                    <tr>
+                        <td *ngFor="let col of columns">
+                            {{ rowData[col.field] }}
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>

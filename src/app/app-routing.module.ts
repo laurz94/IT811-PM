@@ -29,6 +29,7 @@ const routes: Routes = [
   { path: 'risks', loadChildren: () => import('./risks/risks.module').then(m => m.RisksModule) },
   { path: 'procurement', loadChildren: () => import('./procurement/procurement.module').then(m => m.ProcurementModule) },
   { path: 'execution', loadChildren: () => import('./execution/execution.module').then(m => m.ExecutionModule) },
+  { path: 'closure', loadChildren: () => import('./closure/closure.module').then(m => m.ClosureModule) },
 ];
 
 @NgModule({

@@ -4,7 +4,16 @@
     <div>
         <h2>Steps for Project Execution</h2>
         <div>
-
+            <ol>
+                <li>Development Team will be outsourced to a local firm.</li>
+                <li>Directors and Management team will assign resources.</li>
+                <li>Management team will procure resources according the procurement plan.</li>
+                <li>Business Analyst will create user stories.</li>
+                <li>The team will work scrum with 2 week sprints.</li>
+                <li>Teams will meet for daily standup at 9am to give status updates.</li>
+                <li>Project Manager will send updates to stakeholders at the end of each sprint.</li>
+                <li>Project Manager will review and update the project schedule and plan at the end of each sprint.</li>
+            </ol>
         </div>
         <h2>Updated Gantt Chart</h2>
         <hr />
@@ -13,12 +22,58 @@
         </div>
         <h2>Change Requests</h2>
         <div>
-            <ul><li>Update shopping cart software: This request was marked out of scope for this project.</li></ul>
+            <ul>
+                <li>Update shopping cart software: This request was marked out of scope for this project.</li>
+            </ul>
         </div>
         <h2>Progress Report</h2>
         <hr />
         <div>
-            <p-table [columns]="progressColumns" [value]="progressData" responsiveLayout="scroll">
+            <p-card>
+                <ng-template pTemplate="header">
+                    <h3>KU Bookstore Progress Report</h3>
+                </ng-template>
+                <div class="card-body">
+                    <div class="column">
+                        <div><b>Reporting Dates:</b> April 14, 2022 - April 28, 2020</div>
+                        <div><b>Project Manager:</b> Niklas Meissner</div>
+                        <br />
+                        <div><b>Items Completed This Period: </b>
+                            <ul>
+                                <li>Architecture Design</li>
+                                <li>Risk Analysis</li>
+                                <li>Project Schedule</li>
+                                <li>Define Project Plan</li>
+                            </ul>
+                        </div>
+                        <div><b>Items Not Completed This Period: </b>
+                            <ul>
+                                <li>N/A</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div><b>Activities Next Period: </b>
+                            <ul>
+                                <li>Integrate with KU ADID</li>
+                                <li>Develop SQL Database</li>
+                            </ul>
+                        </div>
+                        <div><b>Issues: </b>
+                            <ul>
+                                <li>None</li>
+                            </ul>
+                        </div>
+                        <div><b>Changes to Schedule: </b>
+                            <ul>
+                                <li>Project is running ahead of schedule. No changes required.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </p-card>
+            <p-table [columns]="progressColumns" [value]="progressData" responsiveLayout="scroll"
+                styleClass="p-datatable-sm">
                 <ng-template pTemplate="header" let-columns>
                     <tr>
                         <th *ngFor="let col of columns" [pSortableColumn]="col.title">
@@ -41,11 +96,15 @@
                 <ng-template pTemplate="footer">
                     <tr>
                         <td>Overall Project Completion</td>
-                        <td colspan="2"><p-progressBar class="p-button-danger" value="47" [showValue]="true"></p-progressBar></td>
+                        <td colspan="2">
+                            <p-progressBar class="p-button-danger" value="32" [showValue]="true"></p-progressBar>
+                        </td>
                     </tr>
                     <tr>
                         <td>Time Elapsed</td>
-                        <td colspan="2"><p-progressBar value="58" [showValue]="true"></p-progressBar></td>
+                        <td colspan="2">
+                            <p-progressBar value="54" [showValue]="true"></p-progressBar>
+                        </td>
                     </tr>
                 </ng-template>
             </p-table>

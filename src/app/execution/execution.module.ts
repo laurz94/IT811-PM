@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { CardModule } from 'primeng/card';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { TableModule } from 'primeng/table';
 
@@ -15,6 +16,7 @@ const routes: Routes = [{ path: '', component: ExecutionComponent }];
     RouterModule.forChild(routes),
     CommonModule,
     FormsModule,
+    CardModule,
     ProgressBarModule,
     TableModule,
   ],

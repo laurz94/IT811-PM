@@ -51,6 +51,10 @@ export class AppComponent implements OnInit {
           label: 'Part 9: Project Execution',
           routerLink: '/execution',
         },
+        {
+          label: 'Part 10: Project Closure',
+          routerLink: '/closure'
+        }
       ],
     },
     {
